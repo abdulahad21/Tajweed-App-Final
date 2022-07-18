@@ -10,6 +10,7 @@ import{
     JosefinSans_500Medium,
 } from "@expo-google-fonts/josefin-sans";
 import AppLoading from "expo-app-loading";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const Home=({navigation})=>{
     let [fontLoaded, error] = useFonts({
@@ -26,6 +27,7 @@ const Home=({navigation})=>{
     return(
         
         <ScrollView style={styles.container}>
+          <ScrollView style={styles.textWrapper}>
       <Text style={{ color: 'white', fontSize: 25 }}>السلامُ علیکم</Text>
 
       {/* Speak */}
@@ -47,7 +49,7 @@ const Home=({navigation})=>{
           <Image source={require("./assets/Quran1.png")} style={{ zIndex: 1, width: 140, height: 50, resizeMode: 'center' }}></Image>
           <View style={[{ flexDirection: "row", justifyContent: 'space-around', marginTop: -50 }]}>
             <Image source={require("./assets/Quran.png")} style={{ width: 40, height: 40, resizeMode: 'center' }}></Image>
-            <Text style={{ color: 'white', paddingHorizontal: 5, fontSize: 20 }}>قرآن مجید کی تلاوت کیجئے</Text>
+            <Text style={{ color: 'white', paddingHorizontal: 5, fontSize: 20 }}>قرآن مجید کی تلاوت کیجئے          </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -71,7 +73,7 @@ const Home=({navigation})=>{
           <Image source={require("./assets/counter.png")} style={{ zIndex: 1, width: 190, height: 50, resizeMode: 'center' }}></Image>
           <View style={[{ flexDirection: "row", justifyContent: 'space-around', marginTop: -50 }]}>
             <Image source={require("./assets/tasbeeh.png")} style={{ width: 50, height: 40 }}></Image>
-            <Text style={{ color: 'white', paddingHorizontal: 5, fontSize: 20 }}>تسبیح کاؤنٹر</Text>
+            <Text style={{ color: 'white', paddingHorizontal: 5, fontSize: 20 }}>تسبیح کاؤنٹر                               </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -83,19 +85,31 @@ const Home=({navigation})=>{
           <Image source={require("./assets/calendar1.png")} style={{ zIndex: 1, width: 210, height: 50, resizeMode: 'center' }}></Image>
           <View style={[{ flexDirection: "row", justifyContent: 'space-around', marginTop: -50 }]}>
             <Image source={require("./assets/calendar.png")} style={{ width: 50, height: 60 }}></Image>
-            <Text style={{ color: 'white', paddingHorizontal: 5, fontSize: 20 }}>اسلامی اور عیسوی کیلنڈر</Text>
+            <Text style={{ color: 'white', paddingHorizontal: 6, fontSize: 20 }}>اسلامی اور عیسوی کیلنڈر          </Text>
           </View>
         </TouchableOpacity>
       </View>
 
+      {/* Information */}
+     {/* <View style={{ paddingTop: 20 }}>
+        <Text style={{ marginBottom: -16, zIndex: 1, color: 'white', backgroundColor: '#255149', marginHorizontal: 60, fontSize: 25, textAlign: 'center', borderRadius: 30 }}>معلومات</Text>
+        <TouchableOpacity style={{ backgroundColor: '#3B8B7D', borderRadius: 12, paddingVertical: 30 }} onPress={()=> navigation.navigate('ABOUT-PAGE')}>
+          <Image source={require("./assets/calendar1.png")} style={{ zIndex: 1, width: 210, height: 50, resizeMode: 'center' }}></Image>
+          <View style={[{ flexDirection: "row", justifyContent: 'space-around', marginTop: -50 }]}>
+            <Image source={require("./assets/calendar.png")} style={{ width: 50, height: 60 }}></Image>
+            <Text style={{ color: 'white', paddingHorizontal: 6, fontSize: 20 }}>ایپ کے بارے میں معلومات          </Text>
+          </View>
+        </TouchableOpacity>
+    </View>*/}
+
       {/* Hadeeth */}
-      <View style={{ paddingTop: 20, paddingBottom: 80 ,paddingLeft:25,paddingRight:25}}>
-        <Text style={{ marginBottom: -16, zIndex: 1, color: 'white', backgroundColor: '#255149', marginHorizontal: 60, fontSize: 25, textAlign: 'center', borderRadius: 30 }}>حدیث نبوی ﷺ</Text>
+      <View style={{ paddingTop: 20, paddingBottom: 80 ,paddingLeft:25,paddingRight:25, alignItems:"center",}}>
+        <Text style={{ marginBottom: -16, zIndex: 1, color: 'white', backgroundColor: '#255149',paddingHorizontal:20, marginHorizontal: 30, fontSize: 25, textAlign: 'center', borderRadius: 30 }}>حدیث نبوی ﷺ</Text>
         <Image source={require("./assets/Roza.jpeg")} style={{ width:280, height:280, borderRadius: 12, paddingVertical: 30}}></Image>
       </View>
 
 
-    
+      </ScrollView>
     </ScrollView>
     
     );
@@ -105,8 +119,13 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#081B22',
-      padding: 40,
-      
+      padding: 20,
+      paddingHorizontal: 0,    
+    },
+    textWrapper: {
+      height: hp('80%'), // 80% of height device screen
+      width: wp('100%'),  // 100% of width device screen
+      padding :20,
     },
   
   });

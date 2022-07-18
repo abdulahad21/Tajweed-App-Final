@@ -71,6 +71,7 @@ const ContactYoutube =({navigation})=> {
                 </TouchableOpacity>
             </View>
         </ScrollView>   
+        
     );
 }
 const styles = StyleSheet.create({
@@ -80,6 +81,7 @@ const styles = StyleSheet.create({
         paddingTop:20,
         backgroundColor:"#081B22",
     },
+    
     mainHeader: {
         color:"#3B8B7D",
         fontSize:45,
@@ -87,6 +89,7 @@ const styles = StyleSheet.create({
         textTransform: "capitalize",
         fontFamily: "bold",
     },
+    
     description: {
         fontSize:20,
         color:"#7d7d7d",

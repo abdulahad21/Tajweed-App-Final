@@ -29,8 +29,8 @@ const HomeScreen = (props: HomeScreenProps) => {
   };
 
   return (
-    <SafeAreaView style={{backgroundColor: Colors.white}}>
-      <FlatList
+    <SafeAreaView style={{backgroundColor:"#081B22"}}>
+      <FlatList 
         data={listOfSurah}
         keyExtractor={s => `${s.surah_id}`}
         renderItem={({item, index}) => {
@@ -55,25 +55,26 @@ const SurahItem = (props: SurahItemProps) => {
         <Row height={60}>
           <Col justifyCenter>
             <Box
+            borderRadius={20}
               backgroundImage={Images.num_bg}
               height={35}
               width={35}
               justifyCenter
               alignCenter>
-              <ScaledText size={13}>{props.data.surah_id}</ScaledText>
+              <ScaledText size={13} bold color='black'>{props.data.surah_id}</ScaledText>
             </Box>
           </Col>
           <Col size={3} justifyCenter>
-            <ScaledText size={18} bold>
+            <ScaledText size={18} bold color='#fff'>
               {props.data.surah_name}
             </ScaledText>
             <ScaledText
               color={
-                Colors.grey2
+                Colors.white
               }>{`${props.data.surah_verse_count} verses`}</ScaledText>
           </Col>
           <Col size={3} justifyCenter alignEnd>
-            <ScaledText color={Colors.purple1} size={20}>
+            <ScaledText  size={20} bold color='#fff'>
               {props.data.surah_name_arabic}
             </ScaledText>
           </Col>
